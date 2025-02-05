@@ -1,0 +1,66 @@
+$modelname "player\gibs\demogib001.mdl"
+
+$bodygroup "Body"
+{
+	studio "demogib001_reference.smd"
+}
+
+
+$surfaceprop "flesh"
+
+$contents "solid"
+
+$illumposition 5.788 -0.759 13.48
+
+$cdmaterials "vgui/replay/thumbnails/models/player/demofem/gibs/"
+
+$texturegroup "skinfamilies"
+{
+	{ "demoman_red_gib"  }
+	{ "demoman_blue_gib" }
+	{ "demoman_green_gib" }
+	{ "demoman_yellow_gib" }
+}
+
+$attachment "bloodpoint" "polymsh" 7 27 4 rotate 0 0 0
+
+$cbox 0 0 0 0 0 0
+
+$bbox -8.516 0 -0.651 10.034 11.826 27.611
+
+$definebone "polymsh" "" 0 0 0 0 0 89.999982 0 0 0 0 0 0
+
+
+$sequence "idle" {
+	"demogib001_reference.smd"
+}
+
+$collisionmodel "demogib001_physics.smd"
+{
+	$mass 24.70302
+	$inertia 1
+	$damping 0
+	$rotdamping 0
+	$rootbone " "
+
+}
+
+$keyvalues
+{
+	particles 
+	{
+		"effect"		 
+		{
+			"name" "blood_trail_red_01_goop"
+			"attachment_type" "follow_attachment"
+			"attachment_point" "bloodpoint"
+		}
+	}
+	prop_data 
+	{
+	}
+	world_interactions 
+	{
+		"onworldimpact" "bloodsplat"
+	}
+}
